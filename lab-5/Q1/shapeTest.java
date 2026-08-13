@@ -43,35 +43,30 @@ class triangle extends shape{
 }
 
 public class shapeTest {
+
     public static void main(String[] args) {
-        
 
-        System.out.println("enter the choice: 1. Circle 2. Rectangle 3. Triangle");
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
+        shape c = new circle(5);
+        shape r = new rectangle(4, 6);
+        shape t = new triangle(3, 8);
 
-        if(choice == 1){
-            System.out.println("Enter  the radius of circle : ");
-            double radius = sc.nextDouble();
-            shape c = new circle(radius);
-            System.out.println("Area of Circle: " + c.area());
+        System.out.println("Area of Circle: " + c.area());
+        System.out.println("Area of Rectangle: " + r.area());
+        System.out.println("Area of Triangle: " + t.area());
+
+        double totalArea = c.area() + r.area() + t.area();
+        System.out.println("Total Area: " + totalArea);
+
+        double largestarea = 0;
+        shape largestshape = null;
+
+        for (shape s : new shape[] { c, r, t }) {
+            if (s.area() > largestarea) {
+                largestarea = s.area();
+                largestshape = s;
+            }
         }
-
-        if(choice == 2){
-            System.out.println("Enter the length and breadth of rectangle: ");
-            double l = sc.nextDouble();
-            double b = sc.nextDouble();
-            shape r = new rectangle(l, b);
-            System.out.println("Area of Rectangle: " + r.area());
-        }
-
-        if(choice == 3){
-            System.out.println("Enter the base and height of triangle: ");
-            double base = sc.nextDouble();
-            double height = sc.nextDouble();
-            shape t = new triangle(base, height);
-            System.out.println("Area of Triangle: " + t.area());
-        }
-
-}
+        System.out.println("Largest Area: " + largestarea);
+        System.out.println("Largest Shape: " + largestshape.getClass().getSimpleName());
+    }
 }
