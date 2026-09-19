@@ -30,7 +30,7 @@ public class StockIssue {
 }
 
 class Warehouse {
-    String[] items = { "Mobile", "Laptop", "IPad", "Tablet" };
+    String[] items = { "Mobile", "Laptop", "Ipad", "Tablet" };
     int[] stock = { 45, 25, 35, 18 };
 
     void issue(String item, int qty)
