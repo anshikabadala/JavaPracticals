@@ -1,13 +1,12 @@
 import java.lang.annotation.*;
 import java.lang.reflect.Method;
 
-// Run annotation
+
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 @interface Run {
 }
 
-// Class containing test methods
 class MyTests {
 
     @Run
@@ -30,7 +29,6 @@ class MyTests {
     }
 }
 
-// Mini test runner
 public class Main {
 
     public static void main(String[] args) {
@@ -39,12 +37,10 @@ public class Main {
 
         int count = 0;
 
-        // Get all methods
         Method[] methods = MyTests.class.getDeclaredMethods();
 
         for (Method method : methods) {
 
-            // Check if method has @Run annotation
             if (method.isAnnotationPresent(Run.class)) {
 
                 try {
