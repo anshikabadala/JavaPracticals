@@ -1,0 +1,2 @@
+Name: .\FolderReport.class | Size: 3768 bytes | Modified: 2026-10-28T13:17:16.4099958Z
+Name: .\FolderReport.java | Size: 1164 bytes | Modified: 2026-10-28T13:15:58.5940172Z
